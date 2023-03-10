@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,6 +17,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -25,25 +29,116 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_agregar = new javax.swing.JPopupMenu();
+        jmi_archivo = new javax.swing.JMenuItem();
+        jmi_carpeta = new javax.swing.JMenuItem();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jmi_destacados = new javax.swing.JMenuItem();
+        jmi_papelera = new javax.swing.JMenuItem();
+        jf_crear = new javax.swing.JFrame();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jl_carpetas = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        jt_desglose = new javax.swing.JTree();
         jProgressBar1 = new javax.swing.JProgressBar();
+
+        jmi_archivo.setText("Subir Archivo");
+        jp_agregar.add(jmi_archivo);
+
+        jmi_carpeta.setText("Subir carpeta");
+        jp_agregar.add(jmi_carpeta);
+
+        jmi_destacados.setText("Mover a destacados");
+        jPopupMenu1.add(jmi_destacados);
+
+        jmi_papelera.setText("Mover a papelera");
+        jPopupMenu1.add(jmi_papelera);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".MP4", ".doc", ".pdf", ".xlm", ".exe", ".png" }));
+
+        jLabel1.setText("Extension");
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Tamaño");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/archivo-nuevo.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout jf_crearLayout = new javax.swing.GroupLayout(jf_crear.getContentPane());
+        jf_crear.getContentPane().setLayout(jf_crearLayout);
+        jf_crearLayout.setHorizontalGroup(
+            jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_crearLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
+        );
+        jf_crearLayout.setVerticalGroup(
+            jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_crearLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jf_crearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jf_crearLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jf_crearLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(24, 24, 24))))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Mi unidad", "Destacados", "Papelera", " " };
+        jl_carpetas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Mi unidad", "Destacados", "Papelera" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jl_carpetas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_carpetasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jl_carpetas);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("C:");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane2.setViewportView(jTree1);
+        jt_desglose.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_desglose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_desgloseMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jt_desglose);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,6 +181,22 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jl_carpetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_carpetasMouseClicked
+        // TODO add your handling code here:
+        if(evt.isMetaDown()){
+            jp_agregar.show(jl_carpetas, evt.getX(), evt.getY());
+        }else{
+            
+        }
+    }//GEN-LAST:event_jl_carpetasMouseClicked
+
+    private void jt_desgloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_desgloseMouseClicked
+        // TODO add your handling code here:
+        if(!jt_desglose.isSelectionEmpty() && evt.isMetaDown()){
+            
+        }
+    }//GEN-LAST:event_jt_desgloseMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -117,16 +228,50 @@ public class Principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
+                System.out.println(crearlink());
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JFrame jf_crear;
+    private javax.swing.JList<String> jl_carpetas;
+    private javax.swing.JMenuItem jmi_archivo;
+    private javax.swing.JMenuItem jmi_carpeta;
+    private javax.swing.JMenuItem jmi_destacados;
+    private javax.swing.JMenuItem jmi_papelera;
+    private javax.swing.JPopupMenu jp_agregar;
+    private javax.swing.JTree jt_desglose;
     // End of variables declaration//GEN-END:variables
+ static private String crearlink(){
+    String link="";
+    int limitemayus=122,minimayus=48;
+    
+    Random r = new Random();
+     for (int i = 0; i < 10; i++) {
+         
+             int dig = minimayus+r.nextInt(limitemayus-minimayus+1);
+             if(dig<57&&dig>48){
+                char di= (char)dig;
+             link+=di; 
+             }
+             
+             
+           
+         
+     }
+    return link;
+ }
 }
